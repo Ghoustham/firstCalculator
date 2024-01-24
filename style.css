@@ -1,0 +1,32 @@
+
+*{
+    background-color: #446f70;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.title {
+text-align: center;
+font-size: 2em;
+}
+
+.calculator-container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-flow: column;
+    padding-top: 19px;
+    border: 1px solid red  ;
+    max-width: 25em;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    margin: 1px;
+}
