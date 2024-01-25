@@ -17,16 +17,30 @@ font-size: 2em;
 
 .calculator-container {
     display: flex;
-    text-align: center;
-    align-items: center;
-    flex-flow: column;
     padding-top: 19px;
+    justify-content: center;
+    flex-flow: column wrap;
     border: 1px solid red  ;
-    max-width: 25em;
+    min-width: 15em;
+    align-content: center;
+
+}
+
+.buttons {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 1px;
+    text-align: center;
+    max-width: 8.8em;
 }
 
 .button {
-    display: flex;
-    flex-direction: row;
-    margin: 1px;
+    width: 1em;
+    font-size: 1.8em;
+    margin: 3px;
+}
+
+.backspace {
+    width:3.4em ;
+
 }
