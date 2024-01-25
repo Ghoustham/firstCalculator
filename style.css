@@ -18,29 +18,57 @@ font-size: 2em;
 .calculator-container {
     display: flex;
     padding-top: 19px;
+    padding-bottom: 19px;
     justify-content: center;
     flex-flow: column wrap;
-    border: 1px solid red  ;
-    min-width: 15em;
+    border: 5px double  #35504eee  ;
+    border-radius: 10px;
+    min-width: 11em;
     align-content: center;
-
+    background-color: #649a9b;
 }
 
 .buttons {
     display: flex;
     flex-flow: row wrap;
-    margin: 1px;
+    margin: 3px;
     text-align: center;
-    max-width: 8.8em;
+    max-width: 11em;
+    background-color: #649a9b;
+
+
 }
 
 .button {
     width: 1em;
+    background-color: rgb(79, 88, 85);
     font-size: 1.8em;
+    border-radius: 8px;
+    color: #f7f0f0;
     margin: 3px;
+    border: 2px solid rgb(50, 59, 59);
+    transition: background-color 0.1s ease;
+}
+.button:active {
+    background-color: rgb(180, 233, 233);
 }
 
+
 .backspace {
-    width:3.4em ;
+    font-size: 30px;
+    width: 2em;
+}
+.equals{
+    width: 2.35em;
+}
+
+.display {
+    background-color: #475050;
+    max-width: 8.3em;
+    height: 3em;
+    border-radius: 8px;
+    padding: 4px;
+    font-size: 20px;
+    margin: 6px;
 
 }
