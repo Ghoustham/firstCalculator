@@ -72,3 +72,13 @@ font-size: 2em;
     margin: 6px;
 
 }
+
+.previus-value {
+    background-color: #475050;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.current-value{
+background-color: #475050;
+
+}
