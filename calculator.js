@@ -5,6 +5,8 @@ const numberButtons = document.querySelectorAll('[number-buttons]');
 const operators = document.querySelectorAll('.sign');
 const equalsButton = document.querySelector('.equals');
 const display = document.querySelector('.display');
+const allClear = document.querySelector('.clear');
+const backSpace = document.querySelector('.backspace');
 
 
 class Calculator {
@@ -34,12 +36,55 @@ class Calculator {
     }
     chooseOperation(operation){
         if(this.currentValue === '')return
+        if(this.previusValue !== ''){
+            this.compute();
+        }
         this.operation = operation
-        this.previusValue = this.currentValue
+        this.previusValue = this.currentValue + this.operation
         this.currentValue = '';
     }
 
-    compute(){}
+    compute(){
+    
+    let computer;
+    let valueOfOperator = this.operation
+
+    let curr = parseFloat(this.currentValue)
+    let prev = parseFloat(this.previusValue)
+
+    if (curr == NaN || prev == NaN) return;
+
+    switch(valueOfOperator){
+
+        case '+':
+            computer = curr + prev;
+            break;
+        case '-':
+            computer = prev - curr;
+            break
+        case '*':
+            computer = prev * curr;
+            break;
+        case '/':
+            computer = prev / curr;
+            break;
+        default:
+            return;
+    }
+    this.previusValue = ''
+    this.operation = undefined
+    this. currentValue = computer
+    }
+
+    delete(){
+
+        if(!this.currentValue) return;
+        
+    let arroFValues = this.currentValue.slice(0, -1)
+    
+    this.currentValue = arroFValues
+    
+    }
     
     
     
@@ -63,10 +108,30 @@ numberButtons.forEach(button => {
 operators.forEach(operator => {
     
     operator.addEventListener('click', ()=>{
-        
         calculator.chooseOperation(operator.innerText);
         calculator.updateDisplay()
         
     })
     
+})
+
+equalsButton.addEventListener('click', ()=>{    
+
+    calculator.compute()
+    calculator.updateDisplay()
+
+})
+
+allClear.addEventListener('click', ()=>{    
+
+    calculator.clearAll()
+    calculator.updateDisplay()
+
+})
+
+backSpace.addEventListener('click', ()=>{    
+
+    calculator.delete()
+    calculator.updateDisplay()
+
 })
